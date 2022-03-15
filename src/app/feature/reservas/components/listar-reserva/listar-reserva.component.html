@@ -1,0 +1,17 @@
+<div class="container" *ngIf="reservas">
+    <h2>Listado de Reservas</h2>
+    <div id="divReservas" class="divReservas">
+        <ul class="reservas list-group">
+            <li *ngFor="let item of reservas | async" class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">
+                        <span>Hospedaje #{{item.id}}</span> - {{item.nombreCliente}}
+                    </div>
+                    Desde {{item.fechaInicio| date:'dd/MM/yyyy'}} Hasta {{item.fechaFin| date:'dd/MM/yyyy'}} ({{item.valorReserva|currency}})
+                </div>
+                <button *ngIf="item.activo === getActivo().SI" type="button" class="btn btn-danger" (click)="onEliminar(item)">Eliminar</button>
+            </li>
+        </ul>
+    </div>
+</div>
+  

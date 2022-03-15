@@ -1,0 +1,73 @@
+<div class="container">
+    <h3>Crear Reserva</h3>
+    <form [formGroup]="reservaForm" (ngSubmit)="crear()" id="formCrearReserva">
+        <div class="row mb-3">
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label for="idHospedaje">Id Hospedaje:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="text" id="idHospedaje" placeholder="Id Del Hospedaje" class="form-control"
+                    formControlName="idHospedaje">
+                </div>
+            </div>
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label>Nombre del Cliente:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="text" id="nombreCliente" placeholder="Nombre del Cliente" class="form-control"
+                    formControlName="nombreCliente">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label for="identificacionCliente">Identificación del Cliente:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="text" id="identificacionCliente" placeholder="Identificación del cliente" class="form-control"
+                    formControlName="identificacionCliente">
+                </div>
+            </div>
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label for="fechaInicio">Fecha Inicio Estadía:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="date" id="fechaInicio" placeholder="Fecha Inicio Estadía" class="form-control"
+                    formControlName="fechaInicio">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label for="fechaFin">Fecha Final Estadía:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="date" id="fechaFin" placeholder="Fecha Final Estadía" class="form-control"
+                    formControlName="fechaFin">
+                </div>
+            </div>
+            <div class="col-sm-auto">
+                <div class="col-sm-auto">
+                    <label for="cantidadPersonas">Cantidad De Personas:</label>
+                </div>
+                <div class="col-sm-auto">
+                    <input validar type="text" id="cantidadPersonas" placeholder="Cantidad de Personas" class="form-control"
+                    formControlName="cantidadPersonas">
+                </div>
+            </div>
+        </div>    
+        <button id="botonCrearReserva" type="submit"  class="bnt btn-primary">Reservar</button>
+    </form>
+
+    <div class="mt-3">
+        <div id="divMensajeRespuesta" *ngIf="mensajeRespuesta" class="alert alert-{{tipoAlerta}} alert-dismissible" role="alert">
+            {{mensajeRespuesta}}
+            <button type="button" class="btn-close" (click)="descartarAlerta()"></button>
+        </div>
+    </div>
+</div>
